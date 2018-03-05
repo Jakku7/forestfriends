@@ -51,21 +51,21 @@ export default class Stepper extends React.Component {
   renderModule = () => {
       const myType = this.props.data.allStrapiStep.edges[this.state.activeStep].node.type; 
       if (myType === "Radio") {
-          return <Radio cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          return <Radio stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Thankyou") {
-          return <Thankyou cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          return <Thankyou stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Input") {
-          return <Input cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          return <Input stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Dropdown") {
-          return <Dropdown cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          return <Dropdown stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Textfield") {
-          return <Textfield cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          return <Textfield stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Checkbox") {
-          return <Checkboxes cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          return <Checkboxes stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Results") {
-          return <Results stt={this.state.stepContent} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} />
+          return <Results stepnr={this.state.activeStep} stt={this.state.stepContent} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} />
       } else {
-          return <div><p>Have you wrote down type name correctly?</p></div>
+          return <div><p>Have you written down type name correctly?</p></div>
       }
   }
 

@@ -6,6 +6,18 @@
     font-family: 'Quattrocento Sans', sans-serif;
 }
 
+.errorcontainer {
+    border:1px solid black;
+    text-align:center;
+    background:#a21a48;
+}
+
+.errorcontainer p {
+    margin:0.5rem 0.5rem;
+    font-family: 'Quattrocento Sans', sans-serif;
+    color:white;
+}
+
 .thankyoucontainer {
     margin:1rem;
 }
