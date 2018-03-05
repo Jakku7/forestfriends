@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "row",
+  "info": {
+    "name": "row",
+    "description": "Rows describes the content in timeline section. Every new entry means new row in timeline section. "
+  },
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "image": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "imagealignment": {
+      "type": "string"
+    }
+  }
+}

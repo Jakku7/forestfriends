@@ -1,0 +1,118 @@
+.dNone {
+    display:none !important;
+}
+
+.steppercontainer {
+    max-width:960px;
+    display: block;
+    margin:0 auto;
+    padding:2rem 0;
+    font-family:
+}
+
+.steppercontainer .steps {
+    display:block;
+    margin:0 auto;
+    max-width:600px;
+}
+
+.steps .header {
+    display:inline-block;
+    width:100%;
+    position:relative;
+}
+
+.steps .header h2 {
+    font-family: 'Sigmar One';
+    margin-bottom:25px;
+}
+
+.steps li {
+    list-style-type: none;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.steps button {
+    text-align: center;
+    display:inline-block;
+    margin:0 5px;
+}
+
+.steps p.notes {
+    font-family: 'Quattrocento Sans', sans-serif;
+    padding: 0.5rem;
+    border: 1px solid #281f16;
+    background: #fbd39f;
+}
+
+.steps p.pinknotes {
+    font-family: 'Quattrocento Sans', sans-serif;
+    padding: 0.5rem;
+    border: 1px solid #281f16;
+    background: #a21a48;
+    color: white;
+}
+
+.steps img.monkey {
+    max-width:45px;
+    display: inline-block;
+    float: left;
+}
+
+.steps img.fish {
+    max-width:150px;
+    display: block;
+    margin-left: auto;
+}
+
+.steps .listing li {
+    text-transform: uppercase;
+    font-weight: 600;
+    background: #fbd39f;
+    padding: 5px;
+    -webkit-transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -o-transform: skew(-10deg);
+    margin: 10px;
+    border: 1px solid black;
+    text-align:center;
+    max-width:50%;
+    cursor: pointer;
+    display:block;
+    margin:0 auto;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.steps .listing {
+    padding-bottom:1rem;
+}
+
+.steps .tankcontainer div {
+    display: inline-block;
+    height: 100%;
+    padding: 1rem;
+}
+
+.steps .tankcontainer div.chips {
+    vertical-align:top;
+    width:70%;
+}
+
+.steps .tankcontainer div.image {
+    vertical-align:middle;
+    width:30%;
+}
+
+.steps .tankcontainer div p span {
+    background: #a21a48;
+    color: white;
+    padding: 5px 15px;
+    margin-right: 5px;
+    margin-bottom: 5px; 
+    border: 1px solid black;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Quattrocento Sans', sans-serif;
+    display:inline-block;
+}

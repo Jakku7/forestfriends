@@ -1,0 +1,79 @@
+.processfinishedmsg {
+    background: #a21a48;
+    color: white;
+    padding: 1rem;
+    border: 1px solid black;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.thankyoucontainer {
+    margin:1rem;
+}
+
+.thankyoucontainer img {
+    max-width:200px;
+    display:block;
+    margin:0 auto;
+    padding:1rem;
+}
+
+.inputfield {
+    transform: skewX(-20deg);
+    background: #fbd39f;
+    border: 1px solid black;
+    font-style: normal;
+    padding: 5px 10px;
+    margin: 5px;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.inputcontainer {
+    text-align:center;
+    margin:2rem;
+}
+
+.dropdowncontainer {
+    margin:2rem;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.dropdowncontainer .dropdown label {
+    font-family: 'Quattrocento Sans', sans-serif !important;
+    color: black !important;
+}
+
+.dropdowncontainer .dropdown {
+    font-family: 'Quattrocento Sans', sans-serif !important;
+    width:100% !important;  
+}
+
+.dropdowncontainer .dropdown hr {
+    bottom:6px !important;
+    border-bottom: 1px solid black !important;
+}
+
+.menuitem {
+    padding: 2px !important;
+    border-top: 1px solid rgb(198, 156, 109) !important;
+    background: #fbd39f !important;
+}
+
+.menuitem > div {
+    font-family: 'Quattrocento Sans', sans-serif !important;
+}
+
+.textfieldcontainer {
+    margin:2rem 0rem;
+    padding:1rem;
+    border:1px solid black;
+    background:#fbd39f;
+}
+
+.checkcontainer {
+    margin:2rem 0rem;
+    padding:1rem;
+}
+
+.checkcontainer .checkboxes label {
+    font-family: 'Quattrocento Sans', sans-serif !important;
+}

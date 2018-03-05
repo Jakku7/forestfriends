@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "menu",
+    "description": ""
+  },
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "namedisplayed": {
+      "type": "string"
+    }
+  }
+}

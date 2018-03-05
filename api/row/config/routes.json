@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/row",
+      "handler": "Row.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/row/:_id",
+      "handler": "Row.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/row",
+      "handler": "Row.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/row/:_id",
+      "handler": "Row.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/row/:_id",
+      "handler": "Row.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

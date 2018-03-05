@@ -1,0 +1,35 @@
+.bannercontainer {
+    max-width:960px;
+    display: block;
+    margin:0 auto;
+    text-align:center;
+}
+
+.bannercontainer img {
+    margin:0px;
+    padding:0px;
+}
+
+button.standard {
+    text-align:center;
+    cursor:pointer;
+    color: #582f15;
+    border: 2px solid #582f15;
+    background: #fbd39f;
+    padding: 5px 12px;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+button.standard2 {
+    text-align: center;
+    cursor: pointer;
+    color: #582f15;
+    border: 2px solid #582f15;
+    background: #c69c6d;
+    padding: 5px 12px;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Quattrocento Sans', sans-serif;
+}

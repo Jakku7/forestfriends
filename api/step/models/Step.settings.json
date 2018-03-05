@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "step",
+  "info": {
+    "name": "step",
+    "description": "All steps you would like to implement on stepper page. "
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "options": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}
