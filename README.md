@@ -1,4 +1,7 @@
 # api
 
-A quick description of api.
-"# forestfriends" 
+MongoDB
+Strapi
+GraphQL
+GatsbyJS
+ReactJS
