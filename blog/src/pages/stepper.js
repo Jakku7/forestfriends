@@ -22,20 +22,45 @@ export default class Stepper extends React.Component {
     this.addToTank = this.addToTank.bind(this);
     this.refresh = this.refresh.bind(this);
     this.renderModule = this.renderModule.bind(this);
+    this.keyAction = this.keyAction.bind(this);
+    this.errorHandler = this.errorHandler.bind(this);
     this.state = {
       activeStep: 0,
       stepContent: [], 
+      error: 'none',
     };
   }
 
   moveUpAndDown = (n) => {
-      if (this.props.data.allStrapiStep.edges.length > this.state.activeStep + 1) {
+      if (this.props.data.allStrapiStep.edges.length > this.state.activeStep + 1 && this.state.error !== 'block') {
         this.setState({
           activeStep: n,
         });
     }
   };
     
+  keyAction = (myState) => (e) => {
+    if (e.keyCode == 13) {
+      if (myState === '' || e.target.value === null || e.target.value === '') {
+        this.setState({
+          error: 'block',
+      })} else {
+        this.setState({
+          error: 'none',    
+        })
+        this.addToTank(1, myState);
+      }    
+    };
+  }
+  
+  /* zajac sie tym error handlerem zeby uruchamial sie za kazdym razem gdy nie ma contentu w funkcji moveanddown */ 
+  
+  errorHandler = () => {
+      this.setState({
+          error: 'block',
+      })
+  }
+
   addToTank = (n, value) => {
     if (this.props.data.allStrapiStep.edges.length > this.state.activeStep + 1) {
     this.setState({
@@ -55,7 +80,7 @@ export default class Stepper extends React.Component {
       } else if (myType === "Thankyou") {
           return <Thankyou stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Input") {
-          return <Input stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          return <Input stepnr={this.state.activeStep} error={this.state.error} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} stt={this.state.stepContent} keyPress={this.keyAction} errorHandler={this.errorHandler} />
       } else if (myType === "Dropdown") {
           return <Dropdown stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
       } else if (myType === "Textfield") {
