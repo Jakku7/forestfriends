@@ -5,7 +5,6 @@ const Header = () => (
   <div
     style={{
       background: 'rgb(251, 211, 159)',
-      marginBottom: '1.45rem',
     }}
   >
     <div

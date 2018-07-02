@@ -14,6 +14,7 @@ import './stepper.css'
 
 import monkey from '../img/monkey.png'
 import fish2 from '../img/fish2.png'
+import fish from '../img/fish.png'
 
 export default class Stepper extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export default class Stepper extends React.Component {
         });
     }
   };
-    
+
   keyAction = (myState) => (e) => {
     if (e.keyCode == 13) {
       if (myState === '' || e.target.value === null || e.target.value === '') {
@@ -52,9 +53,9 @@ export default class Stepper extends React.Component {
       }    
     };
   }
-  
+
   /* zajac sie tym error handlerem zeby uruchamial sie za kazdym razem gdy nie ma contentu w funkcji moveanddown */ 
-  
+
   errorHandler = () => {
       this.setState({
           error: 'block',
@@ -75,22 +76,30 @@ export default class Stepper extends React.Component {
     
   renderModule = () => {
       const myType = this.props.data.allStrapiStep.edges[this.state.activeStep].node.type; 
-      if (myType === "Radio") {
-          return <Radio stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
-      } else if (myType === "Thankyou") {
+      switch(myType) {
+        case 'Radio':
+          return  <Radio stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
+          break;
+        case 'Thankyou':
           return <Thankyou stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
-      } else if (myType === "Input") {
-          return <Input stepnr={this.state.activeStep} error={this.state.error} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} stt={this.state.stepContent} keyPress={this.keyAction} errorHandler={this.errorHandler} />
-      } else if (myType === "Dropdown") {
+          break;
+        case 'Input':
+          return <Input stepnr={this.state.activeStep} error={this.state.error} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} stt={this.state.stepContent} keyPress={this.keyAction} /* commented because of the bug it causes errorHandler={this.errorHandler} */ />
+          break;
+        case 'Dropdown':
           return <Dropdown stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
-      } else if (myType === "Textfield") {
+          break;
+        case 'Textfield':
           return <Textfield stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
-      } else if (myType === "Checkbox") {
+          break;
+        case 'Checkbox': 
           return <Checkboxes stepnr={this.state.activeStep} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} funk={this.addToTank} />
-      } else if (myType === "Results") {
+          break;
+        case 'Results':
           return <Results stepnr={this.state.activeStep} stt={this.state.stepContent} cont={this.props.data.allStrapiStep.edges[this.state.activeStep].node.options} />
-      } else {
+        default: 
           return <div><p>Have you written down type name correctly?</p></div>
+          break;
       }
   }
 
@@ -102,28 +111,25 @@ export default class Stepper extends React.Component {
         <div className={"steppercontainer"}>
           <div className={"steps"}>
             <div className={"header"}>
+              <span className={"number"}>{this.state.activeStep + 1}</span>
               <h2>
                 {this.props.data.allStrapiStep.edges[this.state.activeStep].node.title}
               </h2>
+              <img src={monkey} alt={"monkey"} title={"monkey"} className={"monkey"}/>
+               {/* Next, Start Again and Back buttons
                <button onClick={() => this.moveUpAndDown(this.state.activeStep !== 0 ? this.state.activeStep - 1 : 0)} className={(myType === "Thankyou") ? "dNone" : "standard"}>Back</button>
                <button onClick={this.refresh} className={"standard"}>Start Again</button>
-               <button onClick={() => this.moveUpAndDown(this.state.activeStep + 1)} className={(myType === "Thankyou") ? "dNone" : "standard"}>Next</button>
-               <img src={monkey} alt={"monkey"} title={"monkey"} className={"monkey"}/>
-            </div> 
-            <div className={"mainbody"}>
-                <p className={(myType === "Thankyou") ? "notes" : "notes"}>{this.props.data.allStrapiStep.edges[this.state.activeStep].node.description}</p>
-            </div>    
-            <div>{this.renderModule()}</div>
-            <div>
-                <div>
-                    <p className={"notes"}>All your choices are landing in the fish tank, so till the last step you can check what you chose:
-                    </p>
-                </div>
-                <div className={"tankcontainer"}>
-                    <div className={"chips"}><p>{this.state.stepContent.length === 0 ? <span>tank is empty :(</span> : this.state.stepContent.map(item => <span key={item}>{item.substring(2)}</span>)}</p></div>
-                    <div className={"image"}><img src={fish2} alt={"fish"} title={"fish"} className={"fish"}/></div>
-                </div>
-            </div>    
+               */}
+              <button onClick={() => this.moveUpAndDown(this.state.activeStep + 1)} className={(myType === "Thankyou") ? "dNone" : "standard"}>Next</button>
+              <div>{this.renderModule()}</div>
+            </div>     
+            <div className={"maintext"}>
+              <p className={"notes"}>{this.props.data.allStrapiStep.edges[this.state.activeStep].node.description}</p>
+            </div>  
+            <div className={"tankcontainer"}>
+              <div className={"chips"}><p>{this.state.stepContent.length === 0 ? <span>tank is empty :(</span> : this.state.stepContent.map(item => <span key={item}>{item.substring(2)}</span>)}</p></div>
+              <div className={"image"}><img src={fish2} alt={"fish"} title={"fish"} className={"fish"}/></div>
+            </div>
         </div>
         </div>
     </div>

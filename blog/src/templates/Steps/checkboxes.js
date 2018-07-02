@@ -8,7 +8,6 @@ import './steps.css'
 export default class Checkboxes extends React.Component {
   constructor(props) {
     super(props);
-    this.updateCheck = this.updateCheck.bind(this);
     this.clickCheckbox = this.clickCheckbox.bind(this)
     this.state = {
         checkboxes: [], 

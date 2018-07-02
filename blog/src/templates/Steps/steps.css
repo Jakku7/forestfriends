@@ -30,13 +30,12 @@
 }
 
 .inputfield {
-    transform: skewX(-20deg);
     background: #fbd39f;
-    border: 1px solid black;
+    border: 0px solid transparent;
     font-style: normal;
     padding: 5px 10px;
     margin: 5px;
-    font-family: 'Quattrocento Sans', sans-serif;
+    font-family: 'Sigmar One', sans-serif;
 }
 
 .inputcontainer {
