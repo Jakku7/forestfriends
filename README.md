@@ -1,6 +1,6 @@
-# api
+Forest Friends
 
-Forest Friends, react based stepper-application. 
+React based stepper-application. 
 
 MongoDB
 Strapi
