@@ -13,7 +13,7 @@ export default class SecondPage extends React.Component {
     <div>
         <div>
             <ul>
-            {this.props.data.allStrapiArticle.edges.map(document => (
+            {this.props.data.allStrapiArticle && this.props.data.allStrapiArticle.edges.map(document => (
                 <li key={document.node.id}>
                   <h2>
                     <Link to={`/${document.node.id}`}>{document.node.title}</Link>
@@ -24,7 +24,7 @@ export default class SecondPage extends React.Component {
             </ul>
           <Link to="/">Go back to the homepage</Link>
         </div>
-        <p>{this.props.data.allStrapiArticle.edges[1].node.title}</p>
+        <p>{this.props.data.allStrapiArticle && this.props.data.allStrapiArticle.edges[1].node.title}</p>
     </div>
     ); 
   }

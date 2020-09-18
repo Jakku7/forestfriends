@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
     <div className={"sectiontimeline"}>
         <div className={"timelinecontainer"}>
         <ul className={"timeline"}>
-        {data.allStrapiRow.edges.map(document => (
+        {data && data.allStrapiRow && data.allStrapiRow.edges.map(document => (
           <li key={document.node.id} className={"timelinelines"}>
             <div className={"contentcontainer"} style={{ float: document.node.imagealignment === 'left' ? 'right' : 'left' }}>
               <div className={"heading"}>{document.node.heading}</div>
@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => (
     <div className={"sectionnews"}>
         <div className={"newscontainer"}>
             <ul className={"articles"}>
-              {data.allStrapiArticle.edges.map(document => (
+              {data && data.allStrapiArticle && data.allStrapiArticle.edges.map(document => (
                 <li key={document.node.id} className={"articlelines"}>
                   <div className={"imagecontainer"}><img src={require('../img/' + document.node.image + '.png')} alt={document.node.image} title={document.node.image}/></div>
                   <div className={"contentcontainer"}>
