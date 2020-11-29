@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import * as animationData from "./33187-rabbit-in-a-hat.json";
+import * as animationData from "./drivingCar.json";
 
 export default class LottieWrapper extends React.Component {
   constructor(props) {
@@ -11,15 +11,22 @@ export default class LottieWrapper extends React.Component {
   render() {
     const buttonStyle = {
       margin: "10px",
+      cursor: 'pointer',
     };
 
     const defaultOptions = {
-      loop: false,
+      loop: true,
       autoplay: false,
       animationData: animationData,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
       },
+      eventListeners: [
+        {
+          eventName: 'complete',
+          callback: () => console.log('the animation completed:'),
+        },
+      ]
     };
 
     return (
@@ -28,8 +35,10 @@ export default class LottieWrapper extends React.Component {
           options={defaultOptions}
           height={400}
           width={400}
+          speed={1}
           isStopped={this.state.isStopped}
           isPaused={this.state.isPaused}
+          complete={() => { console.log('test')}}
         />
         <button
           className={"standard"}
@@ -48,7 +57,7 @@ export default class LottieWrapper extends React.Component {
         <button
           className={"standard"}
           style={buttonStyle}
-          onClick={() => this.setState({ isPaused: !this.state.isPaused })}
+          onClick={() => this.setState({ isPaused: true })}
         >
           pause
         </button>

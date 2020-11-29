@@ -8,7 +8,7 @@ import './banner.css'
 
 const Banner = ({ data }) => (  
   <div className={"bannercontainer"}>
-    <LottieWrapper />
+    {/*<LottieWrapper />*/}
     <img src={bannerimg} />
     <Link to="/stepper" title="Click Here"><button className={"standard"}>Click here</button></Link>
   </div>
