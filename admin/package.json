@@ -30,7 +30,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "shelljs": "^0.7.8"
+    "shelljs": "^0.8.5"
   },
   "deprecated": false,
   "description": "Strapi Admin",
